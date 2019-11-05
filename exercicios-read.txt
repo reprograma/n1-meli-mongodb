@@ -1,0 +1,23 @@
+
+Exercícios
+
+1.	Selecione todos os registros.
+
+2.	Selecione todos os registros e deixe a com apresentação melhor visível.
+
+3.	Selecione todos os registros em que o nome seja igual a ‘Aya’.
+
+4.	Selecione todos os registros em que a aluna nasceu em São Paulo.
+
+5.	Selecione todos os registros em que contenha a título do livro igual a “Java - Web Developers”.
+
+6.	Selecione todos os registros em que a aluna tenha o livro “Clean Code A” e o nome “Helena”. 
+
+7.	Selecione todos os registros em que a aluna não tenha nascido em sp e tenha o livro Cangaceiro JavaScript.
+
+8.	Selecione todos os registros em que a aluna contenha  o livro Java – Web Developers ou Clean Code B. Primeiro: realize o exercício com o operador ou e posteriormente realize o exercício com o operador in.
+
+9.	Pegue o exercício acima e inclua também aonde a aluna pode ter nascido em sp.
+
+Utilizando os dois operadores juntos. $or e $in.
+10.	Procure todas as alunas que tenham nascido em são paulo ou os livros ‘MySQL’ e ‘MongoDB’.
