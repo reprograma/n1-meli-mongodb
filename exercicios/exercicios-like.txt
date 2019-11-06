@@ -1,0 +1,16 @@
+1.	Selecione todos os registros em que os livros contenham em qualquer parte da palavra, 'Clean'.
+
+
+2.	Selecione todos os registros em que os títulos dos livros terminem com a letra 'S'.
+
+
+3.	Selecione todos os registros em que todos os livros terminem com a letra 't'.
+
+
+4.	Selecione todos os nomes das alunas terminem com a letra 'k' ou 'o'.
+
+
+5.	Selecione todos os registros em que os nomes comecem com a letra 'a'.
+
+
+6.	Selecione todos os registros em que nomes comecem com a letra 'a' ou 'h'.
