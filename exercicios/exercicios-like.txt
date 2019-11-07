@@ -1,16 +1,20 @@
-1.	Selecione todos os registros em que os livros contenham em qualquer parte da palavra, 'Clean'.
-
+﻿1.	Selecione todos os registros em que os livros contenham em qualquer parte da palavra, 'Clean'.
+db.alunas.find({ "livros.titulo" : /clean/i }).pretty()
 
 2.	Selecione todos os registros em que os títulos dos livros terminem com a letra 'S'.
-
+db.alunas.find({ "livros.titulo" : /s$/ }).pretty() – sem o ignore case
+db.alunas.find({ "livros.titulo" : /s$/i }).pretty() – com o ignore case
 
 3.	Selecione todos os registros em que todos os livros terminem com a letra 't'.
-
+db.alunas.find({ "livros.titulo" : /t$/ }).pretty()
 
 4.	Selecione todos os nomes das alunas terminem com a letra 'k' ou 'o'.
-
+db.alunas.find({ "nome" : {$in: [/k$/, /o$/] }}).pretty()
+db.alunas.find({ $or :  [ { "nome" : /k$/ }, { "nome" : /o$/ } ] }).pretty()
 
 5.	Selecione todos os registros em que os nomes comecem com a letra 'a'.
-
+db.alunas.find( { "nome" : /^a/i } ).pretty()
 
 6.	Selecione todos os registros em que nomes comecem com a letra 'a' ou 'h'.
+db.alunas.find({ $or : [ { "nome" : /^a/i}, {"nome" : /^h/i } ] }).pretty()
+db.alunas.find( { "nome" : { $in : [ /^h/i, /^a/i ] } } ).pretty()

@@ -1,0 +1,17 @@
+Exercícios
+1.	Atualize os registros criados no exercício anterior, com os filtros abaixo (não se esqueça de buscar pelo _id):
+
+Deixe todos os registros criados acima que estiverem como true para false, e vice-versa.
+
+Atualize a data de nascimento de 2 alunas.
+
+Inclua pelo menos 3 livros que elas tenham lido.
+
+
+2. Exclua 5 itens dada uma determinada condição:
+
+Por ordenação de inserção, os dois primeiros que foram inseridos.
+
+Por ordem alfabética, os dois primeiros.
+
+Por ordem de data de nascimento decrescente, a primeira data.

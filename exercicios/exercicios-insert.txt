@@ -1,0 +1,65 @@
+Exercícios
+
+1.	Crie 5 novos registros de alunas.
+
+Deve conter os critérios abaixo:
+ 3 em sp e 2 que não nasceram em sp.
+
+Deve conter pelo menos alguns dos livros colocados:
+HTML, CSS, Design, JavaScript, Java, C#, MySQL, MongoDB.
+
+A data de nascimento deve ser inferior a data atual.
+
+{
+      "nome": "Julia",
+      "dateOfBirth": "1992-04-13T08:30:00.000Z",
+      "nasceuEmSp": true,
+      "livros": [
+        {"titulo":"C#" , "leu" : true},
+        {"titulo": "JavaScript", "leu" :true},
+        {"titulo": "MySQL", "leu":true},
+        {"titulo": "Clean Architecture", "leu" :true}
+    ]
+},
+{
+      "nome": "Silvia",
+      "dateOfBirth": "1975-07-02T08:30:00.000Z",
+      "nasceuEmSp": false,
+      "livros": [
+        {"titulo":"Design" , "leu" : true},
+        {"titulo": "Java", "leu":true},
+        {"titulo": "Clean Architecture", "leu" :true}
+    ]
+},
+{
+      "nome": "Lucia",
+      "dateOfBirth": "1997-06-12T08:30:00.000Z",
+      "nasceuEmSp": true,
+      "livros": [
+        {"titulo":"HTML" , "leu" : true},
+        {"titulo": "JavaScript", "leu" :true},
+        {"titulo": "Java", "leu":true},
+        {"titulo": "Clean Architecture", "leu" :true}
+    ]
+},
+{
+      "nome": "Marcia",
+      "dateOfBirth": "1990-11-01T08:30:00.000Z",
+      "nasceuEmSp": false,
+      "livros": [
+        {"titulo":"NodeJS" , "leu" : true},
+        {"titulo": "MongoDB", "leu":true},
+        {"titulo": "Clean Architecture", "leu" :true}
+    ]
+},
+{
+      "nome": "Leila",
+      "dateOfBirth": "1991-08-02T08:30:00.000Z",
+      "nasceuEmSp": true,
+      "livros": [
+        {"titulo":"C#" , "leu" : true},
+        {"titulo": "JavaScript", "leu" :true},
+        {"titulo": "CSS", "leu":true},
+        {"titulo": "Clean Architecture", "leu" :true}
+    ]
+}
