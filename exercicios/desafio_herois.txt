@@ -1,33 +1,53 @@
 Desafio
-
 Você receberá um arquivo com o formato JSON contendo alguns personagens de quadrinhos e/ou desenhos animados e você deverá realizar as alterações que foram solicitadas abaixo pelo cliente.
 
-1.	Selecione todos os registro;
+1.	Selecione todos os registros.
+a.	db.personagens.find().pretty()
 
-2.	Selecione apenas o primeiro registro;
+2.	Selecione apenas o primeiro registro.
+a.	db.personagens.findOne()
+b.	db.personagens.find().sort({_id:1}).limit(1).pretty()
 
-3.	Selecione todos os registros em que o nome seja igual a ‘Carla’ ou a quantidade de gatos seja igual a 2;
+3.	Selecione todos os registros em que o nome seja igual a ‘Carla’ ou a quantidade de gatos seja igual a 2.
+a.	db.personagens.find( {$or : [ {"Nome" : "Carla" }, {"Qtd Gatos" : 2} ]}).pretty()
 
-4.	Selecione todos os registros em que o local de nascimento seja igual a Nova York e necessariamente que a quantidade de cachorros seja igual a 1;
+4.	4.	Selecione todos os registros em que o local de nascimento seja igual a Nova York e necessariamente que a quantidade de cachorros seja igual a 1.
+a.	db.personagens.find( {"Local" : "Nova York", "Qtd Cachorros" : 1} ).pretty()
 
-5.	Selecione todos os registros em que a quantidade de gatos seja igual a 4 ou a quantidade de cachorros seja igual a 2;
+5.	Selecione todos os registros em que a quantidade de gatos seja igual a 4 ou a quantidade de cachorros seja igual a 2.
+a.	db.personagens.find({ $or: [ {"Qtd Gatos" : 4}, { "Qtd Cachorros" : 2 }  ] }).pretty()
 
-6.	Selecione todos os registros em que o nome comece com C;
+6.	Selecione todos os registros em que o nome comece com C.
+a.	db.personagens.find({ "Nome" : /^C/  }).pretty()
 
-7.	Selecione todos os registros em que o nome comece com H;
+7.	Selecione todos os registros em que o nome comece com H.
+a.	db.personagens.find({ "Nome" : /^H/  }).pretty()
 
-8.	Selecione todos os registros em que o nome termine com a;
+8.	Selecione todos os registros em que o nome termine com a.
+a.	db.personagens.find({ "Nome" : /a$/  }).pretty()
 
-9.	Selecione todos os registros em que o nome contenha s;
+9.	Selecione todos os registros em que o nome contenha s.
+a.	db.personagens.find({ "Nome" : /s/  }).pretty()
 
-10.	Selecione todos os registros em que o nome contenha ‘e’ ou ‘o’;
+10.	Selecione todos os registros em que o nome contenha ‘e’ ou ‘o’.
+a.	db.personagens.find( { $or : [{ "Nome" : /e/}, { "Nome": /o/ } ]}).pretty()
+b.  db.personagens.find({"Nome":{$in:[/e/,/o/]}}).pretty
 
-11.	Insira 3 novos super-heróis;
+11.	Insira 3 novos super-heróis.
+a. db.personagens.insertMany([])
 
-12.	Delete 1 super-herói em que o nome seja igual a Capitão América;
+12.	Delete 1 super-herói em que o nome seja igual a Capitão América.
+a. db.personagens.remove({"Nome":"Capitão América"})
 
-13.	Atualize a quantidade de gatos em que o usuário com o registro de nome ‘Thor’ possui. Atualize a quantidade de gatos de ‘5’ para ‘7’;
+13.	Atualize a quantidade de gatos em que o usuário com o registro de nome ‘Thor’ possui. Atualize a quantidade de gatos de ‘5’ para ‘7’.
+a. db.personagens.update({"Nome":"Thor"}, {$set:{quantidadeGatos:7}})
 
 14. Atualize o registro da Mulher Maravilha para capa = true;
+db.personagens.update({"Nome":"Mulher Maravilha"}, {$set:{usaCapa:true}})
 
 15.	Selecione todos os registros que foram trabalhados e exporte para um arquivo JSON.
+mongoexport --db=herois --collection=personagens --out=/Users/Blueshift103/Desktop/teste/herois.json --jsonArray
+
+Obs: no out= você passa o caminho da pasta em que quer armazenar o arquivo .json
+
+

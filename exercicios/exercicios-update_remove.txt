@@ -1,17 +1,49 @@
 Exercícios
-1.	Atualize os registros criados no exercício anterior, com os filtros abaixo (não se esqueça de buscar pelo _id):
+Atualize os registros criados no exercício anterior, com os filtros abaixo (não se esqueça de buscar pelo _id):
 
-Deixe todos os registros criados acima que estiverem como true para false, e vice-versa.
+1. Deixe todos os registros criados acima que estiverem como true para false, e vice-versa.
+a.
+db.alunas.updateMany({"nasceuEmSp":"true"},{$set : { "nasceuEmSp" : "false", "trocou" : true }})
 
-Atualize a data de nascimento de 2 alunas.
+db.alunas.updateMany({"nasceuEmSp":"false", "trocou": { $exists:false } },{$set : { "nasceuEmSp" : "true", "trocou" : true }})
 
-Inclua pelo menos 3 livros que elas tenham lido.
+b.
+db.alunas.updateMany({"nome": {$in: ["Helena","Sabrina","Maria","Arya"]}},
+{$set: {"nasceuEmSp":"false"}})
 
+2. Atualize a data de nascimento de 2 alunas.
 
-2. Exclua 5 itens dada uma determinada condição:
+db.alunas.updateMany({"_id": {$in: [ObjectId("5dc3650dd7bcb7e2dea76b38"),ObjectId("5dc3650dd7bcb7e2dea76b37")]}},
+   {
+     $set: {
+       dateOfBirth: "1997-05-30T08:30:00.000Z"
+    }
+   }
+)
 
-Por ordenação de inserção, os dois primeiros que foram inseridos.
+3. Inclua pelo menos 3 livros que elas tenham lido.
 
-Por ordem alfabética, os dois primeiros.
+db.alunas.update(
+   { _id: ObjectId("5dc0af2b3ff115f343b8d883") },
+   {
+     $push: {
+       livros: {
+          $each: [ { "titulo": "Java", "leu": true }, { "titulo": "HTML", "leu": false }, { "titulo": "CSS", "leu": true } ]         
+       }
+     }
+   }
+)
 
-Por ordem de data de nascimento decrescente, a primeira data.
+Exclua 5 itens dada uma determinada condição:
+
+1. Por ordenação de inserção, os dois primeiros que foram inseridos.
+db.alunas.find().sort({_id:1}).limit(2).pretty() - Para saber quais os 2 primeiros inseridos
+db.alunas.deleteMany({"_id":{$in:[]}})
+
+2. Por ordem alfabética, os dois primeiros.
+db.alunas.find().sort({"nome":1}).limit(2).pretty() - Para saber quais os 2 primeiros em ordem alfabética.
+db.alunas.deleteMany({"_id":{$in:[]}})
+
+3. Por ordem de data de nascimento decrescente, a primeira data.
+db.alunas.find().sort({"dateOfBirth":-1}).limit(1).pretty() - Para saber qual a primeira data em ordem decrescente.
+db.alunas.remove({})
